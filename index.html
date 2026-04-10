@@ -47,7 +47,7 @@
     body { background: #f2f2f2; padding: 24px 0; }
   }
 
-  /* ── CONFIDENTIAL 워터마크 ── */
+  /* ── CONFIDENTIAL 우상단 ── */
   .page::after {
     content: 'CONFIDENTIAL';
     position: absolute;
@@ -57,6 +57,62 @@
     font-weight: 600;
     letter-spacing: .12em;
     color: #bbb;
+  }
+
+  /* ── 법무법인 더 에이치 황해 워터마크 (대각선) ── */
+  .page::before {
+    content: '법무법인 더 에이치 황해';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-size: 42px;
+    font-weight: 800;
+    color: rgba(0,0,0,.03);
+    letter-spacing: .1em;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page.cover::before,
+  .page.notice-page::before { display: none; }
+
+  /* ── 기밀고지 페이지 ── */
+  .notice-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 297mm;
+  }
+  .notice-page::after { display: none; }
+  .notice-box {
+    max-width: 420px;
+    border: 2px solid #1a1a1a;
+    padding: 40px 36px;
+  }
+  .notice-box__title {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+  }
+  .notice-box__body {
+    font-size: 12.5px;
+    color: #555;
+    line-height: 1.9;
+    text-align: left;
+  }
+  .notice-box__body p { margin-bottom: 12px; }
+  .notice-box__footer {
+    margin-top: 24px;
+    font-size: 11px;
+    color: #999;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 16px;
   }
 
   /* ══════════════════════════════
@@ -475,6 +531,24 @@
 </style>
 </head>
 <body>
+
+<!-- ══════════════════════════════════════════
+     기밀 고지
+══════════════════════════════════════════ -->
+<div class="page notice-page">
+  <div class="notice-box">
+    <div class="notice-box__title">기 밀 문 서</div>
+    <div class="notice-box__body">
+      <p>본 문서는 법무법인 더 에이치 황해 및 NeoPM의 기밀 자료로서, 사전 서면 승인 없이 외부에 공개, 복제, 배포, 전송하는 행위를 일절 금합니다.</p>
+      <p>본 문서에 포함된 기술, 비즈니스 모델, 시스템 설계, 화면 구성 등 일체의 지적재산권은 법무법인 더 에이치 황해와 NeoPM이 공동으로 소유합니다.</p>
+      <p>본 문서의 무단 유출, 복제 또는 목적 외 사용이 확인될 경우, 관련 법령에 따라 민·형사상 법적 조치를 취할 수 있습니다.</p>
+    </div>
+    <div class="notice-box__footer">
+      법무법인 더 에이치 황해 &nbsp;|&nbsp; NeoPM<br>
+      2026년 4월
+    </div>
+  </div>
+</div>
 
 <!-- ══════════════════════════════════════════
      표지
@@ -965,6 +1039,13 @@
 </div>
 
 
+<!-- 지재권 고지 (본문 내) -->
+<div style="max-width:210mm;margin:0 auto;padding:12px 24px">
+  <div class="highlight" style="border-left-color:#999;background:#fafafa">
+    <p style="font-size:11px;color:#888;margin:0"><strong>지적재산권 고지</strong> — 본 문서에 기술된 InsureAll APT 플랫폼의 기술, 알고리즘, 시스템 설계 등 일체의 지적재산권(특허권, 저작권, 영업비밀 포함)은 법무법인 더 에이치 황해와 NeoPM이 공동으로 소유합니다.</p>
+  </div>
+</div>
+
 <!-- ══════════════════════════════════════════
      06 신체상해(BI) 처리
 ══════════════════════════════════════════ -->
@@ -1263,6 +1344,25 @@
   <div style="margin-top:40px; padding-top:16px; border-top:1px solid #eee; display:flex; justify-content:space-between; font-size:8pt; color:#bbb;">
     <span>InsureAll APT — 기획보고서 v1.0</span>
     <span>발표: NeoPM &nbsp;|&nbsp; 대외비</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     지적재산권 및 기밀 고지 (끝)
+══════════════════════════════════════════ -->
+<div class="page notice-page">
+  <div class="notice-box">
+    <div class="notice-box__title">지적재산권 및 기밀 고지</div>
+    <div class="notice-box__body">
+      <p><strong>지적재산권 공동소유</strong><br>본 문서에 포함된 InsureAll APT 플랫폼의 기술, 알고리즘, 시스템 설계, UI/UX, 비즈니스 모델 등 일체의 지적재산권(특허권, 저작권, 영업비밀 등)은 법무법인 더 에이치 황해와 NeoPM이 공동으로 소유합니다.</p>
+      <p><strong>기밀 유지 의무</strong><br>본 문서를 수령한 자는 문서에 포함된 정보를 기밀로 유지해야 하며, 사전 서면 승인 없이 제3자에게 공개, 복제, 배포할 수 없습니다.</p>
+      <p><strong>법적 조치</strong><br>본 문서의 무단 유출, 복제 또는 목적 외 사용이 확인될 경우, 부정경쟁방지 및 영업비밀보호에 관한 법률, 저작권법 등 관련 법령에 따라 민·형사상 법적 책임을 물을 수 있습니다.</p>
+    </div>
+    <div class="notice-box__footer">
+      법무법인 더 에이치 황해 &nbsp;|&nbsp; NeoPM<br>
+      본 문서의 유효기간: 발행일로부터 2년<br>
+      2026년 4월
+    </div>
   </div>
 </div>
 
