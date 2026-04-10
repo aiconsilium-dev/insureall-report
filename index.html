@@ -10,17 +10,18 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'PretendardVariable', 'Pretendard', -apple-system, sans-serif;
-    font-size: 11pt;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 14px;
     color: #1a1a1a;
     background: #fff;
     line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
   }
 
   /* ── @page A4 인쇄 설정 ── */
   @page {
     size: A4;
-    margin: 25mm 20mm;
+    margin: 20mm 18mm;
   }
 
   @media print {
@@ -37,7 +38,7 @@
     width: 210mm;
     min-height: 297mm;
     margin: 0 auto 24px;
-    padding: 25mm 20mm;
+    padding: 0 24px;
     background: #fff;
     box-shadow: 0 2px 16px rgba(0,0,0,.08);
   }
@@ -115,9 +116,9 @@
 
   .cover-stamp {
     position: absolute;
-    bottom: 25mm;
-    right: 20mm;
-    font-size: 8pt;
+    bottom: 24mm;
+    right: 18mm;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: .18em;
     color: #ccc;
@@ -139,19 +140,18 @@
   }
 
   .section-title {
-    font-size: 18pt;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 800;
     color: #0a0a0a;
     margin-bottom: 4px;
     letter-spacing: -.02em;
   }
 
   .section-desc {
-    font-size: 9.5pt;
-    color: #777;
-    margin-bottom: 28px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #eee;
+    font-size: 13.5px;
+    color: #666;
+    margin-bottom: 20px;
+    max-width: 600px;
   }
 
   /* ── 하이라이트 박스 ── */
@@ -159,8 +159,10 @@
     border-left: 3px solid #1a1a1a;
     background: #f5f7fa;
     padding: 12px 16px;
-    margin: 16px 0;
-    font-size: 10pt;
+    margin: 12px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 12.5px;
+    line-height: 1.65;
     page-break-inside: avoid;
   }
 
@@ -170,49 +172,50 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 9.5pt;
-    margin: 16px 0;
+    font-size: 11.5px;
+    margin: 12px 0;
     page-break-inside: avoid;
   }
 
   th {
     background: #f0f0f0;
-    font-weight: 600;
-    padding: 8px 10px;
+    font-weight: 700;
+    padding: 6px 8px;
     text-align: left;
-    border: 1px solid #e0e0e0;
+    border-bottom: 1px solid #ddd;
   }
 
   td {
-    padding: 7px 10px;
-    border: 1px solid #e8e8e8;
+    padding: 5px 8px;
+    border-bottom: 1px solid #eee;
     vertical-align: top;
   }
 
-  tr:nth-child(even) td { background: #fafafa; }
+  tr:last-child td { border-bottom: 1px solid #ddd; }
+  tr { page-break-inside: avoid; }
 
   /* ── 본문 타이포 ── */
   h3 {
-    font-size: 12pt;
-    font-weight: 600;
-    margin: 20px 0 8px;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 16px 0 6px;
     color: #1a1a1a;
     page-break-after: avoid;
   }
 
   h4 {
-    font-size: 10.5pt;
-    font-weight: 600;
-    margin: 14px 0 6px;
+    font-size: 13.5px;
+    font-weight: 700;
+    margin: 12px 0 4px;
     color: #333;
     page-break-after: avoid;
   }
 
-  p { margin-bottom: 10px; font-size: 10pt; }
+  p { margin-bottom: 8px; font-size: 13px; }
 
   ul, ol {
-    margin: 8px 0 12px 18px;
-    font-size: 10pt;
+    margin: 6px 0 10px 18px;
+    font-size: 13px;
   }
 
   li { margin-bottom: 4px; }
@@ -232,7 +235,7 @@
   }
 
   figcaption {
-    font-size: 8.5pt;
+    font-size: 11px;
     color: #888;
     margin-top: 6px;
     text-align: center;
